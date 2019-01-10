@@ -1,0 +1,41 @@
+package com.gmail.nikolajievich;
+
+public class Student extends Human {
+
+	private int group;
+	private int course;
+
+	public Student(String name, String lastName, int age, String sex, int group, int course) {
+		super(name, lastName, age, sex);
+		this.group = group;
+		this.course = course;
+	}
+
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getGroup() {
+		return group;
+	}
+
+	public void setGroup(int group) {
+		this.group = group;
+	}
+
+	public int getCourse() {
+		return course;
+	}
+
+	public void setCourse(int course) {
+		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [group=" + group + ", course=" + course + "]";
+	}
+	
+
+}
