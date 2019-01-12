@@ -2,7 +2,7 @@ package com.gmail.nikolajievich;
 
 public class Group {
 
-	Student[] studentArray = new Student[10];
+	private Student[] studentArray = new Student[10];
 
 	public Group(Student[] studentArray) {
 		super();
@@ -24,10 +24,15 @@ public class Group {
 
 	public void add(Student student) {
 		for (int i = 0; i < studentArray.length; i++) {
-			if (studentArray[i] == null) {
-				studentArray[i] = student;
+			try {
+				if (studentArray[i] == null)
+					studentArray[i] = student;
 				System.out.println("Student added");
 				return;
+			}
+
+			catch (NullPointerException e) {
+
 			}
 		}
 	}
@@ -48,18 +53,15 @@ public class Group {
 		}
 	}
 
-	public void search(Student student) {
+	public Student search(Student student) {
 		for (int i = 0; i < studentArray.length; i++) {
-
 			if (studentArray[i].getLastName().equals(student.getLastName())) {
 				System.out.println("Student is found");
-			}
-
-			else {
-				System.out.println("Student didnt find");
+				return studentArray[i];
 			}
 
 		}
-
+		return null;
 	}
 }
+
